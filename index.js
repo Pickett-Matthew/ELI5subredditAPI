@@ -7,6 +7,7 @@ const http = require('http');
 const fetch = require('node-fetch');
 var session = require('express-session')
 var path = require('path');
+
 const userController = require('./controllers/userController.js');
 
 app.use(express.json({limit: '1mb'}))
@@ -24,7 +25,8 @@ app.get("/reddit", userController.callReddit);
 
 app.post('/login', userController.handleLogin);
 app.post('/signup', userController.signup);
-
+app.post('/selected', userController.selected);
+app.post('/answerInput', userController.saveData);
 
 
 

@@ -19,8 +19,7 @@ function signup(req, res){
             console.log(err)
         } else {
 
-            console.log("Added to database" + data);
-            res.json(data);
+            console.log("inserted into db");
         };
     });
 };
@@ -41,7 +40,7 @@ function callReddit(req, res) {
     
     const searchTerm = req.query.searchTerm;
 
-    fetch('https://api.reddit.com/r/' + searchTerm + '/top.json?sort=rising&t=day&limit=4')
+    fetch('https://api.reddit.com/r/' + searchTerm + '/top.json?sort=top&t=day&limit=4')
 
     .then(res => res.json())
     .then(function(myJson){
@@ -63,8 +62,37 @@ function callReddit(req, res) {
     })
 }
 
+function selected(req, res) {
+    console.log('in the selected func');
+    const checked = req.body.data;
+  
+    res.render('makePost', {checked:checked});
+    console.log(checked);
+};
+
+function saveData(req, res) {
+    console.log("made it to save data");
+
+    const answer = req.body.answer;
+
+    var param = [answer];
+
+    var sql = "insert into posts (post) values($1)";
+
+    pool.query(sql, param, function(err, data) {
+        if(err) {
+            console.log(err);
+        } else {
+
+            console.log("Post has been saved");
+        }
+    })
+}
+
 module.exports = {
     signup: signup, 
     handleLogin: handleLogin, 
-    callReddit: callReddit
+    callReddit: callReddit, 
+    selected: selected, 
+    saveData: saveData
 }

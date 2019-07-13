@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </head>
     <body>
-        <div>
-            <p>Here goes the content<br> <%= data %></p><br>
-        </div>
-        <div>
-            <p>Here goes the content<br> <%= data1 %></p><br>
-        </div>
-        <div>
-             <p>Here goes the content<br> <%= data2 %></p><br>
-        </div>
-        <div>
-             <p>Here goes the content<br> <%= data3 %></p><br>
-        </div>
+        <form action="/selected" method='POST' onsubmit="showData()">
+            <input type="checkbox" name="data" value="<%= data %>"><%= data %><br>
+            <input type="checkbox" name="data" value="<%= data1 %>"><%= data1 %><br>
+            <input type="checkbox" name="data" value="<%= data2 %>"><%= data2 %><br>
+            <input type="checkbox" name="data" value="<%= data3 %>"><%= data3 %><br>
+
+            <input type="submit" value="submit">
+        </form>
     </body>
 </html>
