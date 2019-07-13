@@ -1,0 +1,45 @@
+{
+  "name": "js-getting-started",
+  "version": "0.3.0",
+  "description": "A sample Node.js app using Express 4",
+  "engines": {
+    "node": "10.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.5.6",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "get-json": "^1.0.1",
+    "instagram-node": "^0.5.8",
+    "node-fetch": "^2.6.0",
+    "pg": "^7.11.0",
+    "request-promise": "^4.2.4",
+    "snoostorm": "^1.0.2",
+    "snoowrap": "^1.17.0"
+  },
+  "devDependencies": {
+    "request": "^2.88.0",
+    "tape": "^4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heroku/node-js-getting-started.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heroku/node-js-getting-started/issues"
+  },
+  "homepage": "https://github.com/heroku/node-js-getting-started#readme",
+  "author": "Matt Pickett"
+}
