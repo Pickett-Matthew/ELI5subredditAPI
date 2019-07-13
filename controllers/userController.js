@@ -11,9 +11,10 @@ function signup(req, res){
     const username = req.body.username;
     const password = req.body.password;
 
+    const params = [username, password];
     var sql = "insert into users (username, password) values($1, $2)";
 
-    pool.query(sql, function(err, data) {
+    pool.query(sql, params, function(err, data) {
         if(err) {
             console.log(err)
         } else {
