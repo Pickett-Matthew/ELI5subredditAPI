@@ -8,7 +8,8 @@ const fetch = require('node-fetch');
 var session = require('express-session')
 var path = require('path');
 
-const userController = require('./controllers/userController.js');
+const dataController = require('./controllers/dataController.js');
+const loginController = require('./controllers/loginController.js');
 
 app.use(express.json({limit: '1mb'}))
 app.use(express.static(path.join(__dirname, 'public')))
@@ -21,12 +22,13 @@ app.listen(port, function() {
   console.log('Node app is running on port', port);
 });
 
-app.get("/reddit", userController.callReddit);
+app.get('/', loginController.handleLogin);
+app.post('/login', loginController.handleLogin);
+app.post('/signup', loginController.signup);
 
-app.post('/login', userController.handleLogin);
-app.post('/signup', userController.signup);
-app.post('/selected', userController.selected);
-app.post('/answerInput', userController.saveData);
+app.get('/reddit', dataController.callReddit);
+app.post('/selected', dataController.selected);
+app.post('/answerInput', dataController.saveData);
 
 
 

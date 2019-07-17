@@ -7,11 +7,18 @@
     <title>Document</title>
 </head>
 <body>
+    <style>
+        #box {
+            height: 100px;
+            width: 200px;
+        }
+    
+    </style>
     <div>
         <form action="/answerInput" method="POST">
-        <h4>Answer the question!</h4>
+        <h4>What do you think? Answer below</h4>
         <p><%= checked %></p><br>
-        <input type="textarea" name="answer">
+        <input id="box" type="textarea" name="answer" autocomplete="off">
         <input type="submit">
         </form>
     </div>

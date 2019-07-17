@@ -1,0 +1,15 @@
+.btn-reddit {
+    background: #EE3825;
+    border-radius: 0;
+    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #b81e0e;
+  }
+  .btn-reddit:link, .btn-reddit:visited {
+    color: #fff;
+  }
+  .btn-reddit:active, .btn-reddit:hover {
+    background: #b81e0e;
+    color: #fff;
+  }
