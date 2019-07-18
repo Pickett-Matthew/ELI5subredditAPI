@@ -20,6 +20,7 @@ function signup(req, res){
         } else {
 
             console.log("inserted into db");
+            res.render('selectOption')
         };
     });
 };
