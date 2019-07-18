@@ -22,7 +22,6 @@ app.listen(port, function() {
   console.log('Node app is running on port', port);
 });
 
-app.get('/', loginController.handleLogin);
 app.post('/login', loginController.handleLogin);
 app.post('/signup', loginController.signup);
 

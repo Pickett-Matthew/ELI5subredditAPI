@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap4-harbor.min.css">
+    <link rel="stylesheet" href="css/bootstrap4-harbor.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+    
+  </head>
+    <body>
+
+    <div class="bg-info navbar-dark text-white">
+        <div class="container">
+          <nav class="navbar px-0 navbar-expand-lg navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a href="" class="pl-md-0 p-3 text-light">Home</a>
+                <a href="" class="p-3 text-decoration-none text-light">My Tunnels</a>
+                <a href="" class="p-3 text-decoration-none text-light">Logout</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+    </div>
+
+   <!-- start container div-->
+   <form action="/reddit" method="GET">
+    <div class="container py-5 mb5">
+   <div class="row">
+        <div class="card-group">
+
+            <div class="card">
+                <img class="card-img-top" src="/css/images/Easy.png" alt="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">No Stupid Questions</h5>
+                  <p class="card-text">All questions are welcome, no matter how ridiculous</p>
+                </div>
+                <button type="checkbox" class="btn btn-primary py-4" name='nostupidquestions' value='nostupidquestions'>Choose</button>
+            </div>
+
+            <div class="card">
+              <img class="card-img-top" src="/css/images/moderate.png" alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Explain Like I'm Five</h4>
+                  <p class="card-text">These questions may be easy or hard, the key is to explain the answer as easy as possible.</p>
+                </div>
+                <button type="checkbox" class="btn btn-primary py-4" name='explainlikeimfive' value='explainlikeimfive'>Choose</button>
+             </div>
+        
+          <div class="card">
+            <img class="card-img-top" src="/css/images/more-difficult.png" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Questions Scince Refuses to Answer</h4>
+              <p class="card-text">These might be some of the most un-scientific questions you've ever seen. Match your answer accordingly</p>
+            </div>
+            <button type=checkbox class="btn btn-primary py-4" name='shittyaskscience' value='shittyaskscience'>Choose</button>
+          </div>
+
+            <div class="card">
+              <img class="card-img-top" src="/css/images/very-difficult.png" alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">All Things Science</h4>
+                  <p class="card-text">These are not questions you can answer off the top of your head. Some research may be required</p>
+              </div>
+              <button type=checkbox class="btn btn-primary py-4" name='askscience' value='askscience'>Choose</button>
+            </div>
+
+         </div>
+    </div>
+    </form>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

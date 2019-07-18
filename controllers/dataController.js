@@ -1,14 +1,16 @@
 const fetch = require('node-fetch'); //for API request
 
 const { Pool } = require('pg');
-const db_url = process.env.DATABASE_URL;
+const db_url = process.env.DATABASE_URL || 'postgresql://matthewpickett:Mmpjordan23@localhost:5432/matthewpickett';
 const pool = new Pool({connectionString: db_url});
 
 function callReddit(req, res) {
-    
-    const searchTerm = req.query.searchTerm;
 
-    fetch('https://api.reddit.com/r/' + searchTerm + '/top.json?sort=top&t=day&limit=4')
+    for(key in req.query) {
+        console.log(key)
+        const searchTerm = key;
+    
+    fetch('https://api.reddit.com/r/' + searchTerm + '/top.json?sort=hot&t=day&limit=4')
 
     .then(res => res.json())
     .then(function(myJson){
@@ -29,23 +31,34 @@ function callReddit(req, res) {
     res.render('results', posts)
     })
 }
+}
+
 
 function selected(req, res) {
-    console.log('in the selected func');
-    const checked = req.body.data;
-  
-    res.render('makePost', {checked:checked});
-    console.log(checked);
+    console.log('in the selected function');
+    const checked = req.body;
+
+    var arr = new Array();
+    for(key in checked) {
+
+        arr.push(checked[key]);
+    }
+
+    res.render('makePost', {arr:arr})
 };
+
+
 
 function saveData(req, res) {
     console.log("made it to save data");
 
     const answer = req.body.answer;
+    const question = req.body.question;
 
-    var param = [answer];
+    const param = [answer, question];
+    console.log(param + " This is being sent");
 
-    var sql = "insert into posts (post) values($1)";
+    var sql = "insert into posts (post, question) values($1, $2)";
 
     pool.query(sql, param, function(err, data) {
         if(err) {
@@ -53,8 +66,7 @@ function saveData(req, res) {
         } else {
 
             console.log("Post has been saved");
-            res.send("youre answer has been saved")
-            res.end();
+            res.render("selectOption.ejs");
         }
     })
 }
