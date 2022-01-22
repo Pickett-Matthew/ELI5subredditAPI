@@ -18,7 +18,7 @@
     "get-json": "^1.0.1",
     "instagram-node": "^0.5.8",
     "jQuery": "^1.7.4",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "pg": "^7.11.0",
     "request-promise": "^4.2.4",
     "snoostorm": "^1.0.2",
